@@ -1,0 +1,369 @@
+<!doctype html>
+<html class="no-js" lang="de-DE">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>webfabrikant.de - maßgeschneidertes Webdesign</title>
+        <meta name="description" content="Webfabrikant bietet Ihnen maßgeschneiderte Webseiten zum monatlichen Festpreis an. Sie bestimmen wie viel Sie ausgeben wollen">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+          <link rel="stylesheet" href="css/addstyle.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    </head>
+
+    <body>
+      <div id="preloader">
+          <div id="status">&nbsp;</div>
+      </div>
+
+
+<section id="preiskalkulator">
+    <div class="parallax-window" data-parallax="scroll" data-speed="0.08" data-image-src="img/rechnen-hintergrund.jpg">
+        <div class="container">
+            <div class="section-header">
+                
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="mainpadding">
+                            <h3 class="white-text fullwidthbottomline">wählen Sie zwischen zwei Grundpaketen</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cont_order">
+                        <form action="" id="cakeform" onsubmit="return false;">
+                            <fieldset>
+
+
+
+                                <div class="col-xs-12 col-sm-6">
+
+                                    <div class="biglabel">
+                                        <h3 class="headertitle">Webseite <span class="complementary-text">Basic</span></h3>
+
+                                        <p>
+                                            Zum Basispreis gibt es ein moderne Webseite die Ihr Unternehmen vorstellt. Ideal wenn Sie mit paar Worten etwas sagen wollen und ein paar Fotos zeigen wollen. Im Basis-Paket ändern Sie Ihre Inhalte nicht oft, aber dafür ist die Seite genau an Sie und das, was Sie sagen wollen angepasst.
+                                        </p>
+
+                                        <p class="center bbottom">
+                                            <input type="radio" name="selectedcake" id="radio-demo_ja" value="Round6" onclick="calculateTotal()" />
+                                            <label for="radio-demo_ja" class="inline-label">
+                                            </label>
+                                        </p>
+
+
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="col-xs-12 col-sm-6">
+
+                                    <div class="biglabel">
+                                        <h3 class="headertitle">Webseite <span class="main-text">Premium +</span></h3>
+                                        <p>
+                                            Sie haben viele Produte im Angebot. Ihre Dienstleistungen sind vielfältig und Sie wollten deutlich Ihre Kundschaft ansprechen. Dann ist dieses Paket das richtige für sie. Hier können Sie Inhalte leicht selbst ändern und viele Fotos und viele Informationen veröffentlichen damit Sie neue Kunden finden.
+                                        </p>
+
+                                        <p class="center bbottom">
+                                            <input type="radio" name="selectedcake" id="radio-demo_nein" value="Round8" onclick="calculateTotal()" />
+                                            <label for="radio-demo_nein" class="inline-label">
+                                            </label>
+                                        </p>
+                                    </div>
+
+
+                                </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="mainpadding">
+                            <h3 class="white-text fullwidthbottomline">Was soll Ihre Webseite beinhalten?</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+
+                        <div class="pricelabelwrapper" id="unterseiten">
+
+                            <input type="checkbox" id="includecandles" name='includecandles' onclick="calculateTotal()" />
+                            <label for='includecandles' class="inlinelabel">mehrere Unterseiten</label>
+                            <div class="pricedescription">
+
+                                ideal zum detailliertem Vorstellen Ihrer Produkte oder Ihrer Dienstleitung.
+
+
+                            </div>
+                            <p class="nomarg">
+                              <div class="slider">
+                                <div id="unterseiten-handle" class="ui-slider-handle"></div>
+                              </div>
+
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="pricelabelwrapper" id="profitexte">
+                            <input type="checkbox" id="includetexte" name='includetexte' onclick="calculateTotal()" />
+                            <label for='includetexte' class="inlinelabel">professionelle Texte</label>
+                            <div class="pricedescription">
+                              googlefreundliche Texte die Besucher auf Ihre Webseite anlocken.
+
+
+                            </div>
+                            <p class="nomarg">
+
+                              <div class="slider">
+                                <div id="texte-handle" class="ui-slider-handle"></div>
+                              </div>
+
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="pricelabelwrapper" id="galerie">
+                            <input type="checkbox" id="includegalerie" name='includegalerie' onclick="calculateTotal()" />
+                            <label for='includegalerie' class="inlinelabel">Foto / Produktgalerie</label>
+                            <div class="pricedescription">
+                                Zeigen Sie viele Fotos Ihrer Produkte um Ihre Kundschaft zu überzeugen. für bis zu 15 Fotos.
+
+                            </div>
+                            <p class="nomarg">
+
+                              <div class="slider">
+                                <div id="fotos-handle" class="ui-slider-handle"></div>
+                              </div>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="pricelabelwrapper" id="gmaps">
+                            <input type="checkbox" id="includemaps" name='includemaps' onclick="calculateTotal()" />
+                            <label for='includemaps' class="inlinelabel">Google Maps(r)</label>
+                            <div class="pricedescription">
+                                Damit Ihre Kundschaft Sie auch in der Region findet und zu Ihnen kommt. Zusätzlich ist Ihr Unternehmen
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="pricelabelwrapper" id="conform">
+                            <input type="checkbox" id="includecontact" name='includecontact' onclick="calculateTotal()" />
+                            <label for='includecontact' class="inlinelabel">Kontaktformular</label>
+                            <div class="pricedescription">
+                                Ihre Webseiten-Besucher können kinderleicht mit Ihnen in Verbindung treten
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="pricelabelwrapper" id="fbplugin">
+                            <input type="checkbox" id="includefbplugin" name='includefbplugin' onclick="calculateTotal()" />
+                            <label for='includefbplugin' class="inlinelabel">Facebook Plugin</label>
+                            <div class="pricedescription">
+                                Beuscher sehen direkt, wem die Webseite bereits gefällt und können die Seite liken. Kundenbindung
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="pricelabelwrapper" id="graphics">
+                            <input type="checkbox" id="includeicons" name='includeicons' onclick="calculateTotal()" />
+                            <label for='includeicons' class="inlinelabel">Icons / Grafiken</label>
+                            <div class="pricedescription">
+                                Individuell für Sie angefertige Grafiken verleihen Ihrer Webseite einen einzigartigen Charakter <span>Festpreis variiert nach Menge und Größe</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="pricelabelwrapper" id="logowfield">
+                            <input type="checkbox" id="includelogo" name='includelogo' onclick="calculateTotal()" />
+                            <label for='includelogo' class="inlinelabel">Logo</label>
+                            <div class="pricedescription">
+                                Gerne erstellen wir Ihnen ein Logo, dass repräsentativ für Ihr Unternehmen ist.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="pricelabelwrapper" id="vkwfield">
+                            <input type="checkbox" id="includevk" name='includevk' onclick="calculateTotal()" />
+                            <label for='includevk' class="inlinelabel">Extra mehr Kunden</label>
+                            <div class="pricedescription">
+                                Wir statten Ihre Seite mit einer Soliden Basis aus. Dadurch werden Sie im Internet von mehr Leuten gefunden.
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="col-xs-offset-3 col-xs-9 col-sm-offset-8 col-sm-4">
+                        <hr class="pricewrapper">
+
+
+                        <div id="totalPriceWrapper" class="pricelabelwrapper">
+                            <span id="euro">€<br>
+                           <span>monatlich </span></span><span id="totalPrice"></span>
+                        </div>
+
+                        <hr class="pricewrapper">
+                        <div id="totalPriceHinweis">
+                            Diese Preisangabe ist nicht verbindlich und dient Ihnen lediglich zur Orientierung - Es ist kein Bestellformular.
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="white-text fullwidthbottomline">Haben Sie Fragen? Wir bieten Ihnen einen Rückrufservice an</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="" id="namefield">
+
+                            <input form="name" placeholder="Ihr Name" />
+
+                            <input form="email" placeholder="Ihre Stadt" />
+
+                            <input form="email" placeholder="Ihre Email-Adresse" />
+
+                            <input form="email" placeholder="Ihre Telefonnummer" />
+                            </div>
+
+
+                            <fieldset id="rueckrufauswahl">
+                              <p class="white-text">Rückruf gewünscht?</p>
+                                <input type="radio" name="" id="ruckruf_ja" value="" />
+                                <label for="ruckruf_ja" class="inline-label">ja
+                                </label>
+
+                                <input type="radio" name="" id="ruckruf_nein" value="" />
+                                <label for="ruckruf_ja" class="inline-label">nein
+                                </label>
+
+                            </fieldset>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-8">
+                        <div class="" id="msgfield">
+                            <textarea rows="6" placeholder="Schreiben Sie uns eine Nachricht"></textarea>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="signinwrapper">
+                          <div class="buttonwrapper">
+                              <button type="button" name="portfolio" onclick="location.href='wp/portfolio';">abschicken und kostenloses Angebot bekommen</button>
+                          </div>
+                            <p class="textcenter white-text">
+                                <small><a href="impressum.html">Unsere Datenschutzbestimmungen</a>
+                    </small>
+                            </p>
+                        </div>
+
+
+                    </div>
+                    </fieldset>
+                </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="js/parallax.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript">
+
+        $(window).on('load', function() {
+              $('#status').fadeOut();
+              $('#preloader').delay(350).fadeOut('slow');
+              $('body').delay(350).css({'overflow':'visible'});
+          })
+
+             </script>
+
+        <script>
+
+
+
+           $(function() {
+
+
+                var fullheight = $(".fullheight").height();
+
+                var unterseitenHandle = $( "#unterseiten-handle" );
+                var texteHandle = $( "#texte-handle" );
+                var fotosHandle = $( "#fotos-handle" );
+
+
+                $( ".slider" ).slider({
+                  create: function() {
+                    unterseitenHandle.text( $( this ).slider( "value" ) );
+                    texteHandle.text( $( this ).slider( "value" ) );
+                    fotosHandle.text( $( this ).slider( "value" ) );
+                  },
+                  slide: function( event, ui ) {
+                    // unterseitenHandle.text( ui.value );
+                    // texteHandle.text( ui.value );
+                    // fotosHandle.text( ui.value );
+                  }
+
+                });
+
+
+           });
+
+        </script>
+
+        </body>
+
+</html>
