@@ -527,10 +527,15 @@ input[type='radio']:checked + label::before {
 #cakeform {
   text-align: left; }
 
-#unterseiten-handle {
+#unterseitenHandle, #texteHandle, #galerieHandle {
   width: 3em;
   height: 1.6em;
   top: 50%;
   margin-top: -.8em;
   text-align: center;
-  line-height: 1.6em; }
+  line-height: 1.6em;
+}
+
+#totalPrice {
+	font-size: 1em !important;
+}

@@ -1,0 +1,38 @@
+{
+	"unterseitenSlider": {
+		"min": 1,
+		"max": 15,
+		"startAt": 1,
+		"step": 1
+	},
+
+	"texteSlider": {
+		"min": 1,
+		"max": 15,
+		"startAt": 1,
+		"step": 1
+	},
+
+	"galerieSlider": {
+		"min": 1,
+		"max": 15,
+		"startAt": 1,
+		"step": 1
+	},
+
+	"prices" : {
+		"basic": 100,
+		"premium": 200,
+		"subpage": 10,
+		"text": 10,
+		"photo": 10,
+		"googleMaps": 50,
+		"contactForm": 50,
+		"facebookPlugin": 50,
+		"customIconsGrapics": 50,
+		"customLogo": 50,
+		"seo": 50
+	},
+
+	"cookieYears": 10
+}
