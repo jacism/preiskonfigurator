@@ -66,10 +66,6 @@ footer .fullwidthbottomline {
 #namefield input {
   margin-bottom: 15px; }
 
-#rueckrufauswahl {
-  margin-bottom: 15px;
-  text-align: center; }
-
 .fullheight {
   position: relative;
   width: 100%;
@@ -524,10 +520,7 @@ input[type='radio']:checked + label::before {
   font-family: 'Rajdhani', sans-serif;
   color: #ff955c; }
 
-#cakeform {
-  text-align: left; }
-
-#unterseitenHandle, #texteHandle, #galerieHandle {
+#subpagesHandle, #textsHandle, #photosHandle {
   width: 3em;
   height: 1.6em;
   top: 50%;
@@ -538,4 +531,16 @@ input[type='radio']:checked + label::before {
 
 #totalPrice {
 	font-size: 1em !important;
+}
+
+#recall + label {
+	color: white;
+	margin-left: -13px;
+}
+
+#signinwrapper {
+	margin-top: 15px;
+}
+#signinwrapper > div > input {
+	width: auto;
 }

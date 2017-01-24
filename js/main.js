@@ -26,29 +26,29 @@ function init ( data ) {
 		////////////////////
 		// Invoke Sliders //
 		////////////////////
-		// Unterseiten
-		var unterseitenHandle = $( "#unterseitenHandle" );
-		$( ".unterseitenSlider" ).slider({
-			min: data.unterseitenSlider.min,
-			max: data.unterseitenSlider.max,
-			value: data.unterseitenSlider.startAt,
-			step: data.unterseitenSlider.step,
+		// Subpages
+		var subpagesHandle = $( "#subpagesHandle" );
+		$( ".subpagesSlider" ).slider({
+			min: data.subpagesSlider.min,
+			max: data.subpagesSlider.max,
+			value: data.subpagesSlider.startAt,
+			step: data.subpagesSlider.step,
 			disabled: true,
 			create: function() {
-				if ( Cookies( 'unterseitenSliderValue' ) !== undefined ) {
-					$( this ).slider( 'option', 'value', Cookies.get( 'unterseitenSliderValue' ) );
+				if ( Cookies( 'subpagesSliderValue' ) !== undefined ) {
+					$( this ).slider( 'option', 'value', Cookies.get( 'subpagesSliderValue' ) );
 				}
-				unterseitenHandle.text( $( this ).slider( 'value' ) );
+				subpagesHandle.text( $( this ).slider( 'value' ) );
 			},
 			slide: function( event, ui ) {
-				unterseitenHandle.text( ui.value );
+				subpagesHandle.text( ui.value );
 			},
 			stop: function( event, ui ) {
-				calculateTotal( data );
+				pcUpdate( data );
 				// ZZZ Störer implementieren der auf Cookieverwendung hinweißt (Eu-Richtlinie)
 				// Abfrage für cookies um jedes cookie bauen
 				Cookies.set(
-					'unterseitenSliderValue', ui.value,
+					'subpagesSliderValue', ui.value,
 					{
 						// Save cookie in years
 						expires: new Date(new Date().setFullYear(new Date().getFullYear() + data.cookieYears))
@@ -57,27 +57,27 @@ function init ( data ) {
 			}
 		});
 
-		// Texte
-		var texteHandle = $( "#texteHandle" );
-		$( ".texteSlider" ).slider({
-			min: data.texteSlider.min,
-			max: data.texteSlider.max,
-			value: data.texteSlider.startAt,
-			step: data.texteSlider.step,
+		// Texts
+		var textsHandle = $( "#textsHandle" );
+		$( ".textsSlider" ).slider({
+			min: data.textsSlider.min,
+			max: data.textsSlider.max,
+			value: data.textsSlider.startAt,
+			step: data.textsSlider.step,
 			disabled: true,
 			create: function() {
-				if ( Cookies( 'texteSliderValue' ) !== undefined ) {
-					$( this ).slider( 'option', 'value', Cookies.get( 'texteSliderValue' ) );
+				if ( Cookies( 'textsSliderValue' ) !== undefined ) {
+					$( this ).slider( 'option', 'value', Cookies.get( 'textsSliderValue' ) );
 				}
-				texteHandle.text( $( this ).slider( 'value' ) );
+				textsHandle.text( $( this ).slider( 'value' ) );
 			},
 			slide: function( event, ui ) {
-				texteHandle.text( ui.value );
+				textsHandle.text( ui.value );
 			},
 			stop: function( event, ui ) {
-				calculateTotal( data );
+				pcUpdate( data );
 				Cookies.set(
-					'texteSliderValue', ui.value,
+					'textsSliderValue', ui.value,
 					{
 						expires: new Date(new Date().setFullYear(new Date().getFullYear() + data.cookieYears))
 					}
@@ -85,26 +85,26 @@ function init ( data ) {
 			}
 		});
 
-		// Galerie
-		var galerieHandle = $( "#galerieHandle" );
-		$( ".galerieSlider" ).slider({
-			min: data.galerieSlider.min,
-			max: data.galerieSlider.max,
-			value: data.galerieSlider.startAt,
-			step: data.galerieSlider.step,
+		// Photos
+		var photosHandle = $( "#photosHandle" );
+		$( ".photosSlider" ).slider({
+			min: data.photosSlider.min,
+			max: data.photosSlider.max,
+			value: data.photosSlider.startAt,
+			step: data.photosSlider.step,
 			create: function() {
-				if ( Cookies( 'galerieSliderValue' ) !== undefined ) {
-					$( this ).slider( 'option', 'value', Cookies.get( 'galerieSliderValue' ) );
+				if ( Cookies( 'photosSliderValue' ) !== undefined ) {
+					$( this ).slider( 'option', 'value', Cookies.get( 'photosSliderValue' ) );
 				}
-				galerieHandle.text( $( this ).slider( 'value' ) );
+				photosHandle.text( $( this ).slider( 'value' ) );
 			},
 			slide: function( event, ui ) {
-				galerieHandle.text( ui.value );
+				photosHandle.text( ui.value );
 			},
 			stop: function( event, ui ) {
-				calculateTotal( data );
+				pcUpdate( data );
 				Cookies.set(
-					'galerieSliderValue', ui.value,
+					'photosSliderValue', ui.value,
 					{
 						expires: new Date(new Date().setFullYear(new Date().getFullYear() + data.cookieYears))
 					}
@@ -115,36 +115,36 @@ function init ( data ) {
 		////////////
 		// Events //
 		////////////
-		$( '#includeUnterseiten' ).change( function() {
+		$( '#includeSubpages' ).change( function() {
 			if ( $( this ).is( ':checked' ) ) {
-				$( ".unterseitenSlider" ).slider( 'option', 'disabled', false );
+				$( ".subpagesSlider" ).slider( 'option', 'disabled', false );
 			} else {
-				$( ".unterseitenSlider" ).slider( 'option', 'disabled', true );
+				$( ".subpagesSlider" ).slider( 'option', 'disabled', true );
 			}
 		});
 
-		$( '#includeTexte' ).change( function() {
+		$( '#includeTexts' ).change( function() {
 			if ( $( this ).is( ':checked' ) ) {
-				$( ".texteSlider" ).slider( 'option', 'disabled', false );
+				$( ".textsSlider" ).slider( 'option', 'disabled', false );
 			} else {
-				$( ".texteSlider" ).slider( 'option', 'disabled', true );
+				$( ".textsSlider" ).slider( 'option', 'disabled', true );
 			}
 		});
 
-		$( '#includeGalerie' ).change( function() {
+		$( '#includePhotos' ).change( function() {
 			if ( $( this ).is( ':checked' ) ) {
-				$( ".galerieSlider" ).slider( 'option', 'disabled', false );
+				$( ".photosSlider" ).slider( 'option', 'disabled', false );
 			} else {
-				$( ".galerieSlider" ).slider( 'option', 'disabled', true );
+				$( ".photosSlider" ).slider( 'option', 'disabled', true );
 			}
 		});
 
 		$(
 			'#basic,' +
 			'#premium,' +
-			'#includeUnterseiten,' +
-			'#includeTexte,' +
-			'#includeGalerie,' +
+			'#includeSubpages,' +
+			'#includeTexts,' +
+			'#includePhotos,' +
 			'#includeMaps,' +
 			'#includeContact,' +
 			'#includeFbPlugin,' +
@@ -152,17 +152,16 @@ function init ( data ) {
 			'#includeLogo,' +
 			'#includeSeo'
 		).click( function() {
-			calculateTotal( data );
+			pcUpdate( data );
 		});
 
 		///////////////////////
 		// Set current state //
 		///////////////////////
-		$( '#includeUnterseiten' ).trigger( 'change' );
-		$( '#includeTexte' ).trigger( 'change' );
-		$( '#includeGalerie' ).trigger( 'change' );
-		// set price
-		calculateTotal( data );
+		$( '#includeSubpages' ).trigger( 'change' );
+		$( '#includeTexts' ).trigger( 'change' );
+		$( '#includePhotos' ).trigger( 'change' );
+		pcUpdate( data );
 	});
 }
 
@@ -170,44 +169,57 @@ function init ( data ) {
 // Additional Functions //
 //////////////////////////
 /**
- * Calculate and show the total price
+ * Update (attr-)values and price of the pc (price configurator).
  */
-function calculateTotal ( data ) {
+function pcUpdate ( data ) {
 	var price = 0;
 
-	if ( $( '#basic' ).is( ':checked' ) ) {
-		price += data.prices.basic;
+	if ( $( '#includeSubpages' ).is( ':checked' ) ) {
+		$( '#includeSubpages' ).attr( 'value', $( ".subpagesSlider" ).slider( 'value' ) + '_' + data.prices.subpage );
+		price += $( ".subpagesSlider" ).slider( 'value' ) * data.prices.subpage;
 	}
-	if ( $( '#premium' ).is( ':checked' ) ) {
-		price += data.prices.premium;
+	if ( $( '#includeTexts' ).is( ':checked' ) ) {
+		$( '#includeTexts' ).attr( 'value', $( ".textsSlider" ).slider( 'value' ) + '_' + data.prices.text );
+		price += $( ".textsSlider" ).slider( 'value' ) * data.prices.text;
 	}
-	if ( $( '#includeUnterseiten' ).is( ':checked' ) ) {
-		price += $( ".unterseitenSlider" ).slider( 'value' ) * data.prices.subpage;
-	}
-	if ( $( '#includeTexte' ).is( ':checked' ) ) {
-		price += $( ".texteSlider" ).slider( 'value' ) * data.prices.text;
-	}
-	if ( $( '#includeGalerie' ).is( ':checked' ) ) {
-		price += $( ".galerieSlider" ).slider( 'value' ) * data.prices.photo;
+	if ( $( '#includePhotos' ).is( ':checked' ) ) {
+		$( '#includePhotos' ).attr( 'value', $( ".photosSlider" ).slider( 'value' ) + '_' + data.prices.photo );
+		price += $( ".photosSlider" ).slider( 'value' ) * data.prices.photo;
 	}
 	if ( $( '#includeMaps' ).is( ':checked' ) ) {
+		$( '#includeMaps' ).attr( 'value', data.prices.googleMaps );
 		price += data.prices.googleMaps;
 	}
 	if ( $( '#includeContact' ).is( ':checked' ) ) {
+		$( '#includeContact' ).attr( 'value', data.prices.contactForm );
 		price += data.prices.contactForm;
 	}
 	if ( $( '#includeFbPlugin' ).is( ':checked' ) ) {
+		$( '#includeFbPlugin' ).attr( 'value', data.prices.facebookPlugin );
 		price += data.prices.facebookPlugin;
 	}
 	if ( $( '#includeIcons' ).is( ':checked' ) ) {
+		$( '#includeIcons' ).attr( 'value', data.prices.customIconsGrapics );
 		price += data.prices.customIconsGrapics;
 	}
 	if ( $( '#includeLogo' ).is( ':checked' ) ) {
+		$( '#includeLogo' ).attr( 'value', data.prices.customLogo );
 		price += data.prices.customLogo;
 	}
 	if ( $( '#includeSeo' ).is( ':checked' ) ) {
+		$( '#includeSeo' ).attr( 'value', data.prices.seo );
 		price += data.prices.seo;
 	}
 
+	// Calculate total price and write it in choosen option
+	if ( $( '#basic' ).is( ':checked' ) ) {
+		price += data.prices.basic;
+		$( '#basic' ).attr( 'value', price + '_b_' + data.prices.basic );
+	} else if ( $( '#premium' ).is( ':checked' ) ) {
+		price += data.prices.premium;
+		$( '#premium' ).attr( 'value', price + '_p_' + data.prices.premium );
+	}
+
+	// Display price
 	$( '#totalPrice' ).text( price );
 }

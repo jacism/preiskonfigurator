@@ -24,18 +24,17 @@
 			<div class="parallax-window" data-parallax="scroll" data-speed="0.08" data-image-src="img/rechnen-hintergrund.jpg">
 				<div class="container">
 					<div class="section-header">
-
-						<div class="row">
-							<div class="col-xs-12">
-								<div class="mainpadding">
-									<h3 class="white-text fullwidthbottomline">wählen Sie zwischen zwei Grundpaketen</h3>
+						<form action="php/email.php" method="post">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="mainpadding">
+										<h3 class="white-text fullwidthbottomline">wählen Sie zwischen zwei Grundpaketen</h3>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class="row">
-							<div class="cont_order">
-								<form action="" id="cakeform" onsubmit="return false;">
+							<div class="row">
+								<div class="cont_order">
 									<fieldset>
 
 										<div class="col-xs-12 col-sm-6">
@@ -44,10 +43,9 @@
 												<p>
 													Zum Basispreis gibt es ein moderne Webseite die Ihr Unternehmen vorstellt. Ideal wenn Sie mit paar Worten etwas sagen wollen und ein paar Fotos zeigen wollen. Im Basis-Paket ändern Sie Ihre Inhalte nicht oft, aber dafür ist die Seite genau an Sie und das, was Sie sagen wollen angepasst.
 												</p>
-												<p class="center bbottom">
-													<input type="radio" name="selectedcake" id="basic" value="Round6"/>
-													<label for="basic" class="inline-label">
-													</label>
+												<p class="center bottom">
+													<input type="radio" name="basicService" id="basic" checked="checked"/>
+													<label for="basic" class="inline-label"></label>
 												</p>
 											</div>
 										</div>
@@ -58,192 +56,186 @@
 												<p>
 													Sie haben viele Produte im Angebot. Ihre Dienstleistungen sind vielfältig und Sie wollten deutlich Ihre Kundschaft ansprechen. Dann ist dieses Paket das richtige für sie. Hier können Sie Inhalte leicht selbst ändern und viele Fotos und viele Informationen veröffentlichen damit Sie neue Kunden finden.
 												</p>
-												<p class="center bbottom">
-													<input type="radio" name="selectedcake" id="premium" value="Round8"/>
-													<label for="premium" class="inline-label">
-													</label>
+												<p class="center bottom">
+													<input type="radio" name="basicService" id="premium"/>
+													<label for="premium" class="inline-label"></label>
 												</p>
 											</div>
 										</div>
 									</fieldset>
-								</form>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12">
-								<div class="mainpadding">
-									<h3 class="white-text fullwidthbottomline">Was soll Ihre Webseite beinhalten?</h3>
 								</div>
 							</div>
-						</div>
 
-						<div class="row">
-							<div class="col-xs-12 col-sm-6 col-md-4">
-								<div class="pricelabelwrapper" id="unterseiten">
-									<input type="checkbox" id="includeUnterseiten" name="includeUnterseiten"/>
-									<label for='includeUnterseiten' class="inlinelabel">mehrere Unterseiten</label>
-									<div class="pricedescription">
-										ideal zum detailliertem Vorstellen Ihrer Produkte oder Ihrer Dienstleitung.
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="mainpadding">
+										<h3 class="white-text fullwidthbottomline">Was soll Ihre Webseite beinhalten?</h3>
 									</div>
-									<p class="nomarg">
-										<div class="unterseitenSlider">
-											<div id="unterseitenHandle" class="ui-slider-handle"></div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="pricelabelwrapper" id="subpages">
+										<input type="checkbox" name="pcSubpages" id="includeSubpages"/>
+										<label for='includeSubpages' class="inlinelabel">mehrere Unterseiten</label>
+										<div class="pricedescription">
+											ideal zum detailliertem Vorstellen Ihrer Produkte oder Ihrer Dienstleitung.
 										</div>
-									</p>
-								</div>
-							</div>
-
-							<div class="col-xs-12 col-sm-6 col-md-4">
-								<div class="pricelabelwrapper" id="profitexte">
-									<input type="checkbox" id="includeTexte" name='includeTexte'/>
-									<label for='includeTexte' class="inlinelabel">professionelle Texte</label>
-									<div class="pricedescription">
-										googlefreundliche Texte die Besucher auf Ihre Webseite anlocken.
+										<p class="nomarg">
+											<div class="subpagesSlider">
+												<div id="subpagesHandle" class="ui-slider-handle"></div>
+											</div>
+										</p>
 									</div>
-									<p class="nomarg">
-										<div class="texteSlider">
-											<div id="texteHandle" class="ui-slider-handle"></div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="pricelabelwrapper" id="profitexte">
+										<input type="checkbox" name='pcTexts' id="includeTexts"/>
+										<label for='includeTexts' class="inlinelabel">professionelle Texte</label>
+										<div class="pricedescription">
+											googlefreundliche Texte die Besucher auf Ihre Webseite anlocken.
 										</div>
-									</p>
-								</div>
-							</div>
-
-							<div class="col-xs-12 col-sm-6 col-md-4">
-								<div class="pricelabelwrapper" id="galerie">
-									<input type="checkbox" id="includeGalerie" name='includeGalerie'/>
-									<label for='includeGalerie' class="inlinelabel">Foto / Produktgalerie</label>
-									<div class="pricedescription">
-										Zeigen Sie viele Fotos Ihrer Produkte um Ihre Kundschaft zu überzeugen. für bis zu 15 Fotos.
+										<p class="nomarg">
+											<div class="textsSlider">
+												<div id="textsHandle" class="ui-slider-handle"></div>
+											</div>
+										</p>
 									</div>
-									<p class="nomarg">
-										<div class="galerieSlider">
-											<div id="galerieHandle" class="ui-slider-handle"></div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="pricelabelwrapper" id="photos">
+										<input type="checkbox" name='pcPhotos' id="includePhotos"/>
+										<label for='includePhotos' class="inlinelabel">Foto / Produktphotos</label>
+										<div class="pricedescription">
+											Zeigen Sie viele Fotos Ihrer Produkte um Ihre Kundschaft zu überzeugen. für bis zu 15 Fotos.
 										</div>
-									</p>
+										<p class="nomarg">
+											<div class="photosSlider">
+												<div id="photosHandle" class="ui-slider-handle"></div>
+											</div>
+										</p>
+									</div>
 								</div>
-							</div>
 
-							<div class="col-xs-12 col-sm-6 col-md-4">
-								<div class="pricelabelwrapper" id="gmaps">
-									<input type="checkbox" id="includeMaps" name='includeMaps'/>
-									<label for='includeMaps' class="inlinelabel">Google Maps(r)</label>
-									<div class="pricedescription">
-										Damit Ihre Kundschaft Sie auch in der Region findet und zu Ihnen kommt. Zusätzlich ist Ihr Unternehmen
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="pricelabelwrapper" id="gmaps">
+										<input type="checkbox" name='pcMaps' id="includeMaps"/>
+										<label for='includeMaps' class="inlinelabel">Google Maps(r)</label>
+										<div class="pricedescription">
+											Damit Ihre Kundschaft Sie auch in der Region findet und zu Ihnen kommt. Zusätzlich ist Ihr Unternehmen
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="pricelabelwrapper" id="conform">
+										<input type="checkbox" name='pcContact' id="includeContact"/>
+										<label for='includeContact' class="inlinelabel">Kontaktformular</label>
+										<div class="pricedescription">
+											Ihre Webseiten-Besucher können kinderleicht mit Ihnen in Verbindung treten
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="pricelabelwrapper" id="fbplugin">
+										<input type="checkbox" name='pcFbPlugin' id="includeFbPlugin"/>
+										<label for='includeFbPlugin' class="inlinelabel">Facebook Plugin</label>
+										<div class="pricedescription">
+											Beuscher sehen direkt, wem die Webseite bereits gefällt und können die Seite liken. Kundenbindung
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="pricelabelwrapper" id="graphics">
+										<input type="checkbox" name='pcIcons' id="includeIcons"/>
+										<label for='includeIcons' class="inlinelabel">Icons / Grafiken</label>
+										<div class="pricedescription">
+											Individuell für Sie angefertige Grafiken verleihen Ihrer Webseite einen einzigartigen Charakter <span>Festpreis variiert nach Menge und Größe</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="pricelabelwrapper" id="logowfield">
+										<input type="checkbox" name='pcLogo' id="includeLogo"/>
+										<label for='includeLogo' class="inlinelabel">Logo</label>
+										<div class="pricedescription">
+											Gerne erstellen wir Ihnen ein Logo, dass repräsentativ für Ihr Unternehmen ist.
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="pricelabelwrapper" id="vkwfield">
+										<input type="checkbox" name='pcSeo' id="includeSeo"/>
+										<label for='includeSeo' class="inlinelabel">Extra mehr Kunden</label>
+										<div class="pricedescription">
+											Wir statten Ihre Seite mit einer Soliden Basis aus. Dadurch werden Sie im Internet von mehr Leuten gefunden.
+										</div>
 									</div>
 								</div>
 							</div>
 
-							<div class="col-xs-12 col-sm-6 col-md-4">
-								<div class="pricelabelwrapper" id="conform">
-									<input type="checkbox" id="includeContact" name='includeContact'/>
-									<label for='includeContact' class="inlinelabel">Kontaktformular</label>
-									<div class="pricedescription">
-										Ihre Webseiten-Besucher können kinderleicht mit Ihnen in Verbindung treten
+							<div class="row">
+								<div class="col-xs-offset-3 col-xs-9 col-sm-offset-8 col-sm-4">
+									<hr class="pricewrapper">
+									<div id="totalPriceWrapper" class="pricelabelwrapper">
+										<span id="euro">
+											<span id="totalPrice"></span>
+											€<br>
+											<span>monatlich</span>
+										</span>
+									</div>
+									<hr class="pricewrapper">
+									<div id="totalPriceHinweis">
+										Diese Preisangabe ist nicht verbindlich und dient Ihnen lediglich zur Orientierung - Es ist kein Bestellformular.
 									</div>
 								</div>
 							</div>
 
-							<div class="col-xs-12 col-sm-6 col-md-4">
-								<div class="pricelabelwrapper" id="fbplugin">
-									<input type="checkbox" id="includeFbPlugin" name='includeFbPlugin'/>
-									<label for='includeFbPlugin' class="inlinelabel">Facebook Plugin</label>
-									<div class="pricedescription">
-										Beuscher sehen direkt, wem die Webseite bereits gefällt und können die Seite liken. Kundenbindung
+							<div class="row">
+								<div class="col-xs-12">
+									<h3 class="white-text fullwidthbottomline">Haben Sie Fragen? Wir bieten Ihnen einen Rückrufservice an</h3>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12 col-sm-4">
+									<div id="namefield">
+										<input type="text" name="contactName" placeholder="Ihr Name" />
+										<input type="text" name="contactCity" placeholder="Ihre Stadt" />
+										<input type="email" name="contactEmail" placeholder="Ihre Email-Adresse" />
+										<input type="text" name="contactNumber" placeholder="Ihre Telefonnummer" />
+									</div>
+									<input type="checkbox" name="contactRecall" id="recall" value="Rückruf gewünscht"/>
+									<label for="recall" class="inline-label">Rückruf gewünscht?</label>
+								</div>
+
+								<div class="col-xs-12 col-sm-8">
+									<div class="" id="msgfield">
+										<textarea name="contactMessage" rows="6" placeholder="Schreiben Sie uns eine Nachricht"></textarea>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-12">
+										<div id="signinwrapper">
+											<div class="buttonwrapper">
+												<input type="submit" name="submit" id="#sendRequest" value="Abschicken und kostenloses Angebot bekommen"></input>
+											</div>
+											<p class="textcenter white-text">
+												<small><a href="impressum.html">Unsere Datenschutzbestimmungen</a></small>
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
-
-							<div class="col-xs-12 col-sm-6 col-md-4">
-								<div class="pricelabelwrapper" id="graphics">
-									<input type="checkbox" id="includeIcons" name='includeIcons'/>
-									<label for='includeIcons' class="inlinelabel">Icons / Grafiken</label>
-									<div class="pricedescription">
-										Individuell für Sie angefertige Grafiken verleihen Ihrer Webseite einen einzigartigen Charakter <span>Festpreis variiert nach Menge und Größe</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-xs-12 col-sm-6 col-md-4">
-								<div class="pricelabelwrapper" id="logowfield">
-									<input type="checkbox" id="includeLogo" name='includeLogo'/>
-									<label for='includeLogo' class="inlinelabel">Logo</label>
-									<div class="pricedescription">
-										Gerne erstellen wir Ihnen ein Logo, dass repräsentativ für Ihr Unternehmen ist.
-									</div>
-								</div>
-							</div>
-
-							<div class="col-xs-12 col-sm-6 col-md-4">
-								<div class="pricelabelwrapper" id="vkwfield">
-									<input type="checkbox" id="includeSeo" name='includeSeo'/>
-									<label for='includeSeo' class="inlinelabel">Extra mehr Kunden</label>
-									<div class="pricedescription">
-										Wir statten Ihre Seite mit einer Soliden Basis aus. Dadurch werden Sie im Internet von mehr Leuten gefunden.
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-offset-3 col-xs-9 col-sm-offset-8 col-sm-4">
-								<hr class="pricewrapper">
-								<div id="totalPriceWrapper" class="pricelabelwrapper">
-									<span id="euro">
-										<span id="totalPrice"></span>
-										€<br>
-										<span>monatlich</span>
-									</span>
-								</div>
-								<hr class="pricewrapper">
-								<div id="totalPriceHinweis">
-									Diese Preisangabe ist nicht verbindlich und dient Ihnen lediglich zur Orientierung - Es ist kein Bestellformular.
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12">
-								<h3 class="white-text fullwidthbottomline">Haben Sie Fragen? Wir bieten Ihnen einen Rückrufservice an</h3>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12 col-sm-4">
-								<div class="" id="namefield">
-									<input form="name" placeholder="Ihr Name" />
-									<input form="email" placeholder="Ihre Stadt" />
-									<input form="email" placeholder="Ihre Email-Adresse" />
-									<input form="email" placeholder="Ihre Telefonnummer" />
-								</div>
-
-								<fieldset id="rueckrufauswahl">
-									<p class="white-text">Rückruf gewünscht?</p>
-									<input type="radio" name="" id="ruckruf_ja" value="" />
-									<label for="ruckruf_ja" class="inline-label">ja</label>
-									<input type="radio" name="" id="ruckruf_nein" value="" />
-									<label for="ruckruf_ja" class="inline-label">nein</label>
-								</fieldset>
-							</div>
-							<div class="col-xs-12 col-sm-8">
-								<div class="" id="msgfield">
-									<textarea rows="6" placeholder="Schreiben Sie uns eine Nachricht"></textarea>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12">
-								<div id="signinwrapper">
-									<div class="buttonwrapper">
-										<button type="button" name="portfolio" onclick="location.href='wp/portfolio';">abschicken und kostenloses Angebot bekommen</button>
-									</div>
-									<p class="textcenter white-text">
-										<small><a href="impressum.html">Unsere Datenschutzbestimmungen</a></small>
-									</p>
-								</div>
-							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>
